@@ -8,7 +8,7 @@ from unicode_tr.extras import slugify
 UPPER_CASES = [
     {"word": u"ığdır", "upper": u"IĞDIR"},
     {"word": u"ırmak", "upper": u"IRMAK"},
-    {"word": u"timu", "upper": u"TİMU", }
+    {"word": u"timu", "upper": u"TİMU"},
 ]
 
 LOWER_CASES = [
@@ -22,7 +22,7 @@ CAPITALIZE_CASES = [
     {"word": u"KADIKÖY", "capitalize": u"Kadıköy"},
     {"word": u"çınar", "capitalize": u"Çınar"},
     {"word": u"şansal", "capitalize": u"Şansal"},
-    {"word": u"istanbul", "capitalize": u"İstanbul", }
+    {"word": u"istanbul", "capitalize": u"İstanbul"},
 ]
 
 TITLE_CASES = [
