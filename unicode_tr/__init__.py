@@ -1,16 +1,17 @@
 # -*- coding: utf8 -*-
 # Redesigned by @guneysus
 
-import __builtin__
+import builtins
 from forbiddenfruit import curse
 
 lcase_table = tuple(u'abcçdefgğhıijklmnoöprsştuüvyz')
 ucase_table = tuple(u'ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ')
 
+
 def upper(data):
     translate_table = {
-            ord(u'i') : u'İ',
-            ord(u'ı') : u'I'}
+            ord(u'i'): u'İ',
+            ord(u'ı'): u'I'}
     data = data.translate(translate_table)
     result = ''
     for char in data:
@@ -22,10 +23,11 @@ def upper(data):
         result += ucase_char
     return result
 
+
 def lower(data):
     translate_table = {
-            ord(u'İ') : u'i',
-            ord(u'I') : u'ı'}
+            ord(u'İ'): u'i',
+            ord(u'I'): u'ı'}
     data = data.translate(translate_table)
     result = ''
     for char in data:
@@ -37,22 +39,26 @@ def lower(data):
         result += lcase_char
     return result
 
+
 def capitalize(data):
     return data[0].upper() + data[1:].lower()
+
 
 def title(data):
     return " ".join(map(lambda x: x.capitalize(), data.split()))
 
-curse(__builtin__.unicode, 'upper', upper)
-curse(__builtin__.unicode, 'lower', lower)
-curse(__builtin__.unicode, 'capitalize', capitalize)
-curse(__builtin__.unicode, 'title', title)
 
-class unicode_tr(unicode):
+curse(builtins.str, 'upper', upper)
+curse(builtins.str, 'lower', lower)
+curse(builtins.str, 'capitalize', capitalize)
+curse(builtins.str, 'title', title)
+
+
+class unicode_tr(str):
     """For Backward compatibility"""
     def __init__(self, arg):
         super(unicode_tr, self).__init__(*args, **kwargs)
 
 if __name__ == '__main__':
-    print u'istanbul'.upper()
-    print u'İSTANBUL'.lower()
+    print(u'istanbul'.upper())
+    print(u'İSTANBUL'.lower())

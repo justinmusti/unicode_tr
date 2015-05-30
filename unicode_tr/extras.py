@@ -9,8 +9,8 @@ def slugify(value):
     django.utils.text.slugify
     patched for ı and İ chars.
     """
-    if not isinstance(value, unicode):
-        value = unicode(value, 'utf8')
+    if not isinstance(value, str):
+        value = str(value, 'utf8')
 
     value = value.replace(u'\u0131', 'i')
     value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
